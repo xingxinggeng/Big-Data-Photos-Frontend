@@ -2,4 +2,3 @@ version: 0.1
 artifacts:
   files:
     - '**/*'
-  base-directory: build
