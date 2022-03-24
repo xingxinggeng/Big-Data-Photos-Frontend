@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/index.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.879.0.min.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="./apiGateway-js-sdk/apigClient.js"></script>
+
+        <script src="./apiGateway-js-sdk/aws-sdk.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <center>
+                <form class="form-inline" action="", method="get", target="", id="search_photos">
+                    <input class="form-control" name="search_query" id = "search_query" type="text" autofocus>
+                    <button type="button">
+                        <i class="large material-icons" id="mic_search" onclick="voiceSearch()">mic</i>
+                    </button>
+                </form>
+
+                <p>Click the microphone to start or stop recording.</p>
+                <button type="button" class="btn btn-outline-success" id="searchPhotos" name="searchPhotos" onclick="textSearch()">Search</button>
+            </center>
+        </div>
+        <div class="row">
+            <div id="photos_search_results">
+            </div>
+        </div>
+        <div class="Upload_files">
+            <h2>Upload Your Photo</h2>
+            <center>
+                <form action="/action_page.php">
+                    <div class="input-group">
+                        <input type="file" class="custom-file-input" id="uploaded_file" name="filename">
+                        <label class="custom-file-label" for="uploaded_file">Choose file</label>
+                    </div>
+                    <input class="form-control" type="text" id="custom_labels" name="custom_labels" placeholder="Custom labels">
+                </form>
+                <button class="btn btn-outline-primary" id="upload_files" onclick="uploadPhoto()">Upload</button>
+            </center>
+        </div>
+        <script>var apigClient = apigClientFactory.newClient({apiKey: 'z0K9JFfvuf2qKOfHDvmnE9L7QFTb4BxHJ6wDgvmh'});</script>
+    </body>
+</html>
